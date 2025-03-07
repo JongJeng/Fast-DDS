@@ -1,0 +1,33 @@
+{
+    "clangd.arguments": [
+        // 标记compelie_commands.json文件的目录位置
+        "--compile-commands-dir=build",
+        // 编译器的路径，用以查找系统头文件的路径
+        "--query-driver=/usr/bin/c++",
+        // 同时开启的任务数量
+        "-j=16",
+        // 格式化风格
+        "--fallback-style=Google",
+        // 输出的 JSON 文件更美观
+        "--pretty",
+        // 在后台自动分析文件（基于complie_commands)
+        "--background-index",
+        // clang-tidy功能
+        "--clang-tidy",
+        // "--clang-tidy-checks=cppcoreguidelines-*,performance-*,bugprone-*,portability-*,modernize-*,google-*",
+        // 全域补全
+        "--all-scopes-completion",
+        // 更详细的补全内容
+        "--completion-style=detailed",
+        // 补充头文件的形式
+        // "--header-insertion=iwyu",
+        "--header-insertion=never",
+        // pch优化的位置, memory/disk
+        "--pch-storage=memory",
+        // 日志级别
+        // "--log=verbose",
+        // 启用配置文件(.clangd)
+        "--enable-config"
+    ],
+    "git.ignoreLimitWarning": true,
+}
